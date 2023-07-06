@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Pixcie
+Exec=/home/me/pixcie/venv/bin/python3 /home/me/pixcie/pix.py %f
+Icon=/home/me/pixcie/icons/icon_128x128.png
+Terminal=false
+StartupWMClass=pix.py
+Categories=Utility;
