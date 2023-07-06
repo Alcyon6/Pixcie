@@ -39,5 +39,6 @@ Refresh your desktop database:
 update-desktop-database ~/.local/share/applications/
 
 sudo apt install python3-dev build-essential gcc
+sudo apt install libheif1 or pip install libheif1 I can't remember
 sudo apt-get install libheif-dev
 pip install cyheif
