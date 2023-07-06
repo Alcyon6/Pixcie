@@ -1,0 +1,5 @@
+pypng==0.20220715.0
+PySide6==6.5.1.1
+Pillow==10.0.0
+pyheif==0.7.1
+pyexiv2
