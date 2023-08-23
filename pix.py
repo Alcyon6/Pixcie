@@ -177,7 +177,7 @@ class ImageViewer(QMainWindow):
         self.image_files = [
             os.path.join(folder_path, f)
             for f in os.listdir(folder_path)
-            if os.path.splitext(f)[1].lower() in [".jpg", ".jpeg", ".png", ".bmp", ".gif", ".heic"]
+            if os.path.splitext(f)[1].lower() in [".jpg", ".jpeg", ".png", ".bmp", ".gif", ".heic", ".webp"]
         ]
         self.current_image_index = self.image_files.index(image_path)
 
@@ -216,6 +216,9 @@ class ImageViewer(QMainWindow):
                         "raw",
                         heif_file.mode,
                 )
+                return QPixmap.fromImage(ImageQt.ImageQt(image))
+            elif image_path.lower().endswith('.webp'):
+                image = Image.open(image_path)
                 return QPixmap.fromImage(ImageQt.ImageQt(image))
             else:
                 return QPixmap(image_path)
@@ -267,7 +270,7 @@ class ImageViewer(QMainWindow):
                 self,
                 "Open Image",
                 "",
-                "Images (*.png *.PNG *.jpg *.JPG *.bmp *.BMP *.gif *.GIF *.jpeg *.JPEG *.heic *.HEIC);;All Files (*)",
+                "Images (*.png *.PNG *.jpg *.JPG *.bmp *.BMP *.gif *.GIF *.jpeg *.JPEG *.heic *.HEIC *.webp *.WEBP);;All Files (*)",
                 options=options,
             )
         if file_path:
